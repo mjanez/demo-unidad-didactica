@@ -72,6 +72,19 @@ h4.lia-h4, h5.lia-h5, h6.lia-h6 {
 
 /* ========== BARRA DE HERRAMIENTAS Y NAVEGACIÓN ========== */
 
+/* Logo del encabezado LiaScript */
+.lia_header__logo {
+    display: inline-block !important;
+    background-image: url("https://cdn.jsdelivr.net/gh/mjanez/demo-unidad-didactica@main/img/logo_dge.svg") !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    margin-right: 10px !important;
+    vertical-align: middle !important;
+}
+
 .lia-slide .lia-toolbar {
     background: linear-gradient(135deg, var(--primary-color), var(--header-bg-color)) !important;
     background-image: url("https://raw.githubusercontent.com/mjanez/demo-unidad-didactica/main/img/logo_dge.svg") !important;
@@ -455,4 +468,54 @@ pre.lia-code {
 
 .lia-footer a:hover {
     color: white !important;
+}
+
+/* ========== LOGOS INSTITUCIONALES ========== */
+
+.logo-list.primary-logos {
+    list-style: none !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 2rem !important;
+    flex-wrap: wrap !important;
+    padding: 1rem 0 !important;
+    margin: 2rem 0 !important;
+    background: linear-gradient(135deg, var(--alternate-bg-color), var(--secondary-color)) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.logo-list.primary-logos li {
+    display: inline-block !important;
+    transition: transform 0.3s ease !important;
+}
+
+.logo-list.primary-logos li:hover {
+    transform: scale(1.05) !important;
+}
+
+.logo-list.primary-logos img {
+    height: 60px !important;
+    width: auto !important;
+    max-width: 200px !important;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1)) !important;
+    transition: filter 0.3s ease !important;
+}
+
+.logo-list.primary-logos img:hover {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2)) !important;
+}
+
+/* Responsive design para logos */
+@media (max-width: 768px) {
+    .logo-list.primary-logos {
+        gap: 1rem !important;
+        padding: 0.5rem !important;
+    }
+    
+    .logo-list.primary-logos img {
+        height: 45px !important;
+        max-width: 150px !important;
+    }
 }
