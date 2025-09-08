@@ -55,7 +55,7 @@ liascript-devserver --input unidades --live -o
 ```
 
 >[!TIP]
-> Para modificar el CSS en local, puedes modificar en las opciones de configuracion (inicio del Markdown) `link: https://cdn.jsdelivr.net/gh/mjanez/demo-unidad-didactica@main/assets/css/dge-liascript.css` por un css en `unidades/css-personalizado.css`
+> Para modificar el CSS en local, puedes modificar en las opciones de configuracion (inicio del Markdown) `link: https://cdn.jsdelivr.net/gh/mjanez/demo-unidad-didactica@main/assets/css/dge-liascript.css` por una hoja CSS situada en el mismo directorio que el document, ej `./dge-liascript.css`
 
 
 Salida esperada (ejemplo):
@@ -98,19 +98,13 @@ npm install -g --verbose @liascript/exporter
 ```
 
 * `-h` `--help`: muestra la ayuda 
--i --input                  file to be used as input
--p --path                   path to be packed, if not set, the path of the input
-                            file is used
--o --output                 output file name (default is output), the ending is
-                            define by the format
--s --style                  additional styling to passed to the export, can be
-                            used for fixes, such as "height: 100vh; width: 100%;
-                            border: 2px;"
--f --format                 scorm1.2, scorm2004, json, fullJson, web, ims, pdf,
-                            android, linkedData (default is json)
--v --version                output the current version
--k --key                    responsive voice key
-
+* `-i` `--input` : archivo usado como entrada.
+* `-p` `--path`: ruta a empaquetar, si no se establece, se utiliza la ruta del archivo de entrada.
+* `-o` `--output`: nombre del archivo de salida (el predeterminado es `output`), la extensión es definida por el formato.
+* `-s` `--style`: estilos adicionales que se pasan a la exportación, se pueden utilizar para correcciones, como `"height: 100vh; width: 100%; border: 2px;"`
+* `-f` `--format`: `scorm1.2`, `scorm2004`, `json`, `fullJson`, `web`, `ims`, `pdf`, `android`, `linkedData` (el predeterminado es `json`)
+* `-v` `--version`: muestra la versión actual
+* `-k` `--key`: clave de voz responsiva
 
 ### Exportar a SCORM
 Para generar SCORM usando `liascript-exporter`:
@@ -118,8 +112,9 @@ Para generar SCORM usando `liascript-exporter`:
 2. Generar SCORM
 
 ```sh
-liascript-exporter -i . -o curso-scorm.zip --format scorm
+liascript-exporter -i unidades/06.md -o curso-scorm.zip --format scorm1.2
 ```
+
 Opciones útiles:
 
 * `--scorm-organization <nombre>`: establece el título de la organización
@@ -159,7 +154,7 @@ Opciones útiles:
 Puedes usar el modo `--pdf-preview` para inspeccionar el curso antes de imprimir, incluso con entradas HTTPS:
 
 ```sh
-liascript-exporter --format pdf --pdf-preview -i https://raw.githubusercontent.com/mjanez/demo-unidad-didactica/main/unidades/06.md
+liascript-exporter --format pdf --pdf-preview -i unidades/06.md
 ```
 
 #### Personalización de estilos y temas  
@@ -167,10 +162,10 @@ Puedes modificar la apariencia del PDF usando CSS personalizado con `--pdf-style
 
 ```sh
 # Usar un tema específico
-liascript-exporter --format pdf --pdf-theme red -i https://raw.githubusercontent.com/mjanez/demo-unidad-didactica/main/unidades/06.md
+liascript-exporter --format pdf --pdf-theme red -i unidades/06.md
 
 # Usar CSS personalizado
-liascript-exporter --format pdf --pdf-stylesheet custom.css -i https://raw.githubusercontent.com/mjanez/demo-unidad-didactica/main/unidades/06.md
+liascript-exporter --format pdf --pdf-stylesheet custom.css -i unidades/06.md
 ```
 
 Ejemplo de `custom.css` para definir colores y fuentes globales:
