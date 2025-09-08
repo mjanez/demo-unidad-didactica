@@ -54,6 +54,10 @@ liascript-devserver -p 3001 -o
 liascript-devserver --input unidades --live -o
 ```
 
+>[!TIP]
+> Para modificar el CSS en local, puedes modificar en las opciones de configuracion (inicio del Markdown) `link: https://cdn.jsdelivr.net/gh/mjanez/demo-unidad-didactica@main/assets/css/dge-liascript.css` por un css en `unidades/css-personalizado.css`
+
+
 Salida esperada (ejemplo):
 
 ```sh
