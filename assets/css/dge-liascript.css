@@ -1,0 +1,186 @@
+/*
+ * DGE LiaScript Custom Styles
+ * Basado en dge-dcat-ap-es.css y adaptado para LiaScript
+ */
+
+:root {
+    /* Colores principales del repositorio DCAT-AP-ES */
+    --red-aporta: 229, 1, 62;
+    --red-aporta-light: #f5d0d6;
+    --blue-aporta: 68, 109, 162;
+    --blue-aporta-dark: 80, 143, 226;
+    
+    /* Variables específicas para LiaScript */
+    --lia-anthracite: 75,75,75;
+    --lia-blue-darker: 0,72,113;
+    --lia-blue-dark: 12,120,171;
+    --lia-blue: 15,147,209;
+    --lia-grey-dark: 50,50,50;
+    --lia-grey-light: 240,240,240;
+    --lia-grey-lighter: 249,249,249;
+    --lia-grey: 174,174,174;
+    --lia-red-darker: 104,0,0;
+    --lia-red-dark: 185,75,60;
+    --lia-red: var(--red-aporta);
+    --lia-success: 140,201,111;
+    --lia-turquoise-darker: 15,54,69;
+    --lia-turquoise-dark: 42,109,111;
+    --lia-turquoise: 57,145,147;
+    --lia-warning: 244,195,67;
+    --lia-white: 255,255,255;
+    --lia-yellow-darker: 124,60,0;
+    --lia-yellow-dark: 189,125,32;
+    --lia-yellow: 227,151,38;
+    --lia-black: 0,0,0;
+    --color-background: var(--lia-white);
+    --color-border: var(--lia-grey-light);
+    --color-highlight-dark: var(--blue-aporta-dark);
+    --color-highlight-menu: var(--blue-aporta);
+    --color-highlight: var(--blue-aporta);
+    --color-text: var(--lia-anthracite);
+}
+
+/* ========== TIPOGRAFÍA Y ELEMENTOS BASE ========== */
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    line-height: 1.6 !important;
+}
+
+.h1, .h2, .h3 {
+    font-family: 'Poppins';
+    line-height: 1.35;
+    align-content: center;
+    text-align: center;
+}
+
+.lia_header__logo {
+  display: none;
+}
+
+.lia-header__middle {
+    background-image: url(https://raw.githubusercontent.com/mjanez/demo-unidad-didactica/4edfff226397a830506bffa49fdd75758f631d59/img/logo_dge.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+
+.icon::before {
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.overview {
+  border-left: 4px solid rgba(var(--color-highlight));
+  padding-left: 1em;
+  margin: 1em;
+}
+
+/* Colores y estilos */
+.text-error {
+    color: rgb(var(--lia-red));
+}
+
+/* Logos en el header */
+/* Header Logos row */
+.dge-entidades {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: var(--dge-padding);
+}
+
+.logo-list-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; 
+}
+
+/* ========== LOGOS EN FILA HORIZONTAL ========== */
+/* Selector específico y robusto para evitar conflictos */
+ul.logo-list.primary-logos,
+.logo-list.primary-logos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+/* Elementos de la lista - forzar inline */
+ul.logo-list.primary-logos li,
+.logo-list.primary-logos li {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Enlaces dentro de los logos */
+ul.logo-list.primary-logos li a,
+.logo-list.primary-logos li a {
+    display: inline-block;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Imágenes de los logos - tamaño uniforme */
+ul.logo-list.primary-logos img,
+.logo-list.primary-logos img {
+    max-height: 42px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Primer logo - ancho máximo especial para logos rectangulares anchos */
+ul.logo-list.primary-logos li:first-child img,
+.logo-list.primary-logos li:first-child img {
+    max-width: 350px !important;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    ul.logo-list.primary-logos,
+    .logo-list.primary-logos {
+        gap: 15px;
+    }
+
+    ul.logo-list.primary-logos img,
+    .logo-list.primary-logos img {
+        max-height: 50px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    ul.logo-list.primary-logos,
+    .logo-list.primary-logos {
+        gap: 10px;
+    }
+
+    ul.logo-list.primary-logos img,
+    .logo-list.primary-logos img {
+        max-height: 40px;
+    }
+}
+
